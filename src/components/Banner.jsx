@@ -35,7 +35,7 @@ function Banner() {
                     backgroundImage: `url(
                         "https://image.tmdb.org/t/p/original/${bannerMovie?.backdrop_path}"
                     )`,
-                    backgroundPosition: "center center"
+                    backgroundPosition: "top center"
                 }}
             >
                 <div className="banner-info">
