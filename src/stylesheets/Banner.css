@@ -35,6 +35,7 @@
   margin-right: 1rem;
   background-color: rgba(51, 51, 51, 0.5);
   padding: 0.5rem 2rem 0.5rem 2rem;
+  z-index: 999;
 }
 
 .banner-button:hover {
@@ -68,11 +69,29 @@
   box-sizing: border-box;
 }
 
+.play-true {
+  content: "Stop";
+}
+
 @media screen and (min-width: 1301px) {
   .banner-container {
     color: white;
     object-fit: contain;
     height: 50vh;
+  }
+
+  .banner-description {
+    height: 10vh;
+  }
+
+  .banner-title {
+    font-size: 3.5rem;
+    padding-bottom: 0rem;
+  }
+
+  .banner-description {
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
   }
 
   .tmdb-rating {
@@ -94,6 +113,10 @@
     height: 50vh;
   }
 
+  .banner-description {
+    height: 10vh;
+  }
+
   .banner-title {
     font-size: 2rem;
     padding-bottom: 0.5rem;
@@ -113,10 +136,16 @@
 
 /* For mobile devices (max-width: 799px) */
 @media screen and (max-width: 799px) {
+  .banner-contents {
+    margin-left: 30px;
+    padding-top: 10vh;
+    height: 200px;
+  }
+
   .banner-container {
     color: white;
     object-fit: contain;
-    height: 50vh;
+    height: 60vh;
   }
 
   .banner-title {
@@ -126,8 +155,8 @@
 
   .banner-description {
     line-height: 1;
-    padding-top: 0.5rem;
-    padding-bottom: 0.5rem;
+    padding-top: 0.35rem;
+    padding-bottom: 0rem;
     font-size: 0.9rem;
   }
 
@@ -135,7 +164,7 @@
     border-radius: 0.2vw;
     margin-right: 1rem;
     background-color: rgba(51, 51, 51, 0.5);
-    padding: 0.5rem 2rem 0.5rem 2rem;
+    padding: 0.25rem 1rem 0.25rem 1rem;
   }
 
   .tmdb-rating {

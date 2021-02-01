@@ -6,10 +6,10 @@ import YouTube from 'react-youtube';
 import axiosTMDB from '../axiosTMDB';
 import '../stylesheets/Row.css';
 import axios from 'axios';
+import getMovieAPI from '../getMovieAPI';
 
 // Set Base URL to grab locally (in TMDB) stored images.
 const baseUrl = "https://image.tmdb.org/t/p/original/";
-const YoutubeSearchAPI = "https://youtube.googleapis.com/youtube/v3/search?part=snippet&key=AIzaSyAD_VnznUvqAs0BE8qhT-h-rkR4fX6A-GM&type=video&q=";
 
 const Row = ({ title, fetchUrl, isLargeRow }) => {
     // Here because we are using useState function, when setMovies(param) is called,
@@ -53,24 +53,7 @@ const Row = ({ title, fetchUrl, isLargeRow }) => {
             // Reset trailer URL and close YouTube player if we already have a trailerUrl
             setTrailerUrl('');
         } else {
-            // movieTrailer is npm module that we installed using npm i movie-trailer.
-            let movieName = movie?.name || movie?.title;
-            let movieYear = "";
-            if (movie?.first_air_date !== undefined) {
-                movieYear = (movie?.first_air_date).substr(0, 4);
-            } else if (movie?.release_date !== undefined) {
-                movieYear = (movie?.release_date).substr(0, 4);
-            }
-            else {
-                console.log('Neither first air date nor release date is defined. Will not search with year.');
-                movieYear = "";
-            }
-
-            // let movieYear = ((movie?.first_air_date).substr(0, 4) || (movie?.release_date).substr(0, 4));
-            let additionalSearchQuery1 = "movie";
-            let additionalSearchQuery2 = "trailer";
-            // Replace the whitespace between movie's name with +
-            let fullYoutubeAPIURL = YoutubeSearchAPI + movieName.replace(/\s/g, '+') + "+" + movieYear + "+" + additionalSearchQuery1 + "+" + additionalSearchQuery2;
+            let fullYoutubeAPIURL = getMovieAPI(movie);
 
             const axiosYoutubeAPI = axios.create();
             axiosYoutubeAPI
@@ -84,7 +67,6 @@ const Row = ({ title, fetchUrl, isLargeRow }) => {
                 });
         };
     };
-    
 
     return (
         <div className="row">

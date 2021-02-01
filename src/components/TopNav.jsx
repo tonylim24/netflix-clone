@@ -27,12 +27,12 @@ function TopNav() {
             <img 
                 className="topnav-logo"
                 src="//upload.wikimedia.org/wikipedia/commons/thumb/0/08/Netflix_2015_logo.svg/170px-Netflix_2015_logo.svg.png" 
-                alt="Netflix Logo"
+                alt="Logo"
             />
 
             <ul className="primary-navigation">
                 <li className="navigation-tab">
-                    <a className="current active" href="">Browse</a>
+                    <a className="current active" href="#">Browse</a>
                     <a href="#">TV Shows</a>
                     <a href="#">Movie</a>
                     <a href="#">New &amp; Popular</a>
