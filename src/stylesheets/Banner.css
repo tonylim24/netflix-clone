@@ -1,11 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap");
 
-.banner-container {
-  color: white;
-  object-fit: contain;
-  height: 450px;
-}
-
 .banner-contents {
   margin-left: 30px;
   padding-top: 150px;
@@ -49,18 +43,16 @@
   transition: all 0.2s;
 }
 
-/* https://www.youtube.com/watch?v=XtMThy8QKqU @ 2:13:00 */
 .banner-fadeBottom {
-  height: 7.4rem;
+  height: 25vh;
   background-image: linear-gradient(
     180deg,
     transparent,
-    rgba(37, 37, 37, 0.61),
+    rgba(37, 37, 37, 0.6),
     #111 /* Matches our bgcolor from Main.css*/
   );
 }
 
-/* Ratings */
 .tmdb-rating {
   display: flex;
   position: absolute;
@@ -76,6 +68,60 @@
   box-sizing: border-box;
 }
 
-.tmdb-number {
-  font-family: Helvetica;
+@media screen and (min-width: 1301px) {
+  .banner-container {
+    color: white;
+    object-fit: contain;
+    height: 50vh;
+  }
+
+  .tmdb-rating {
+    position: absolute;
+    right: 0;
+    top: 35vh;
+  }
+
+  .tmdb-number {
+    font-family: Helvetica;
+    font-size: 20px;
+  }
+}
+
+@media screen and (max-width: 1300px) {
+  .banner-container {
+    color: white;
+    object-fit: contain;
+    height: 50vh;
+  }
+
+  .tmdb-rating {
+    position: absolute;
+    right: 0;
+    top: 35vh;
+  }
+
+  .tmdb-number {
+    font-family: Helvetica;
+    font-size: 20px;
+  }
+}
+
+/* For mobile devices (max-width: 799px) */
+@media screen and (max-width: 799px) {
+  .banner-container {
+    color: white;
+    object-fit: contain;
+    height: 50vh;
+  }
+
+  .tmdb-rating {
+    position: absolute;
+    right: 0;
+    top: 40vh;
+  }
+
+  .tmdb-number {
+    font-family: Helvetica;
+    font-size: 14px;
+  }
 }

@@ -59,8 +59,25 @@
   }
 }
 
-/* For desktop (min-width: 800px) */
-@media screen and (min-width: 800px) {
+@media screen and (min-width: 1301px) {
+  /* Navigation UL */
+  .primary-navigation {
+    max-width: 40vw;
+    list-style-type: none;
+  }
+
+  /* Navigation li > a */
+  .navigation-tab a {
+    font-family: Helvetica;
+    /* font-size: 0.9rem; */
+    font-size: 0.8vw;
+    text-decoration: none;
+    color: #fff;
+    margin-right: 25px;
+  }
+}
+
+@media screen and (max-width: 1300px) {
   /* Navigation UL */
   .primary-navigation {
     max-width: 40vw;
