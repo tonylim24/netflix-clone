@@ -54,7 +54,6 @@ const Row = ({ title, fetchUrl, isLargeRow }) => {
             setTrailerUrl('');
         } else {
             // movieTrailer is npm module that we installed using npm i movie-trailer.
-            console.log(movie);
             let movieName = movie?.name || movie?.title;
             let movieYear = "";
             if (movie?.first_air_date !== undefined) {
@@ -71,15 +70,17 @@ const Row = ({ title, fetchUrl, isLargeRow }) => {
             let additionalSearchQuery1 = "movie";
             let additionalSearchQuery2 = "trailer";
             // Replace the whitespace between movie's name with +
-            console.log(YoutubeSearchAPI + movieName.replace(/\s/g, '+') + "+" + movieYear + "+" + additionalSearchQuery1 + "+" + additionalSearchQuery2);
             let fullYoutubeAPIURL = YoutubeSearchAPI + movieName.replace(/\s/g, '+') + "+" + movieYear + "+" + additionalSearchQuery1 + "+" + additionalSearchQuery2;
 
             const axiosYoutubeAPI = axios.create();
             axiosYoutubeAPI
                 .get(fullYoutubeAPIURL)
                 .then(function(response) {
-                    console.log(response.data.items[0].id.videoId);
                     setTrailerUrl(response.data.items[0].id.videoId);
+                })
+                .catch(function (error){
+                    console.log('Cannot obtain playback from API.');
+                    console.log(error);
                 });
         };
     };
