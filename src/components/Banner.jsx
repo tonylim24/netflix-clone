@@ -28,7 +28,7 @@ function Banner() {
     const opts = {
         // height: document.getElementById('banner-player').getBoundingClientRect().height,
         // width: document.getElementById('banner-player').getBoundingClientRect().width,
-        width: "400px",
+        width: "350px",
         height: "200px",
         playerVars: {
             autoplay: 1,
